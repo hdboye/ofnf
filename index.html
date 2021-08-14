@@ -6,9 +6,9 @@
     <title>FNF to OFNF</title>
   </head>
   <body>
-    <script src="script.js"></script>
-    <input type="text" id="beep">
-    <button id="fart" onclick="fartInMyFace()">Convert</button>
-    <p id='iHaveToMakeSoManyStupidIds'>THIS IS STILL IN BETA! MIGHT BE A BIT BUGGY IN-GAME</p>
+    <script src="index.js"></script>
+    <input type="file" id="files" name="files[]" accept=".json" />
+    <button id="fart" onclick="loadFileAsText()">Convert</button>
+    <button id="old" onclick='window.location.href = window.location.href + "/legacy.html";'>Old Version</button>
   </body>
 </html>
