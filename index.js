@@ -14,8 +14,8 @@ function loadFileAsText() {
     fileReader.readAsText(fileToLoad, "UTF-8");
 }
 
-// made this async so it runs thru every note correctly
-async function fartInMyFace(text) {
+// my dumbass really mixed up async and sync
+function fartInMyFace(text) {
     // var stuff = getFile(fileList);
     var chart = JSON.parse(text);
     var finalArray = [];
@@ -25,17 +25,17 @@ async function fartInMyFace(text) {
             var real = chart.song.notes[i].sectionNotes[b][1] + 1;
             var fart = real - 4; // i have to make these stupid variables????????
             if (real >= 5 && chart.song.notes[i].mustHitSection == false) {
-                await finalArray.push([chart.song.notes[i].sectionNotes[b][0], fart]);
+                 finalArray.push([chart.song.notes[i].sectionNotes[b][0], fart, chart.song.notes[i].sectionNotes[b][2]]);
             } else if (chart.song.notes[i].mustHitSection == true) {
-                await finalArray.push([chart.song.notes[i].sectionNotes[b][0], real]);
+                 finalArray.push([chart.song.notes[i].sectionNotes[b][0], real, chart.song.notes[i].sectionNotes[b][2]]);
             }
         }
     }
-    await finalArray.sort((a, b) => a[0] - b[0]);
+     finalArray.sort((a, b) => a[0] - b[0]);
     for (let i = 0; i < finalArray.length; i++) {
-        final = final + finalArray[i][0].toString() + '-' + finalArray[i][1].toString() + '-';
+        final = final + finalArray[i][0].toString() + '-' + finalArray[i][1].toString() + '-' + finalArray[i][2].toString() + '-';
     }
-    final = await final.slice(0, final.length - 1);
+    final =  final.slice(0, final.length - 1);
     final = final + '=';
     var x = document.getElementById('files');
     var btn = document.getElementById('fart');
