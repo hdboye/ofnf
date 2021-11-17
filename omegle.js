@@ -2,15 +2,9 @@ const icon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6
 const Omegle = require('omegle-node-fix');
 var om = new Omegle();
 
-class Omegle {
+class OmegleScratch {
 
   constructor() {}
-
-  getHats(){
-    return{
-
-    }
-  }
 
   getInfo() {
     return {
@@ -97,4 +91,4 @@ class Omegle {
 
 }
 
-Scratch.extensions.register(new Omegle());
+Scratch.extensions.register(new OmegleScratch());
