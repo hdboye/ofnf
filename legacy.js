@@ -1,4 +1,3 @@
-// just wait until they find out i steal code from other sites
 function fartInMyFace(){
   var stuff = document.getElementById("beep").value;
   var chart = JSON.parse(stuff);
