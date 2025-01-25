@@ -1,4 +1,3 @@
-// just wait until they find out i steal code from other sites
 var fileSelector = null;
 var fileList = null;
 
